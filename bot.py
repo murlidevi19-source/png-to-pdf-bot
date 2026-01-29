@@ -15,7 +15,8 @@ from PIL import Image
 import os
 
 # 🔑 PASTE YOUR NEW TOKEN HERE
-BOT_TOKEN = "8463517091:AAF34S4bkJrAq96-VLStneMkMg5o1PjY7Jo"
+import os
+BOT_TOKEN = os.environ.get("8463517091:AAF34S4bkJrAq96-VLStneMkMg5o1PjY7Jo")
 
 user_images = {}
 TEMP_DIR = "temp"
@@ -108,3 +109,4 @@ app.add_handler(MessageHandler(filters.PHOTO, image_handler))
 app.add_handler(CallbackQueryHandler(button_handler))
 
 app.run_polling()
+
